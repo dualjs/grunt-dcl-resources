@@ -51,17 +51,23 @@ module.exports = function(grunt) {
             }
 
             this.queue(mod);
-            if (pack && pack.dcl && pack.dcl.resources) {
+            if (pack && pack.dcl) {
                 var res = pack.dcl.resources;
                 var less = pack.dcl.less;
                 var dir = path.dirname(id);
 
                 if (less) {
-                    var lessFile = normalize(dir, less);
-                    lessFiles.push(lessFile);
+                    if(!Array.isArray(less)) {
+                        less = [less];
+                    }
+                    less.forEach(function (less) {
+                        console.log(less);
+                        var lessFile = normalize(dir, less);
+                        lessFiles.push(lessFile);
+                    });
                 }
 
-                res.forEach(function(item) {
+                res && res.length && res.forEach(function(item) {
                     resourceFiles.push(normalize(dir, item));
                 });
             }
