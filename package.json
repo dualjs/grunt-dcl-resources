@@ -1,7 +1,7 @@
 {
   "name": "grunt-dcl-resources",
   "description": "Bundle resources for DCL",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/dualjs/grunt-dcl-resources",
   "author": {
     "name": "Mark",
@@ -40,7 +40,7 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "dgraph": "~0.6.2",
+    "dgraph": "~0.11.1",
     "through": "~2.3.4"
   }
 }
